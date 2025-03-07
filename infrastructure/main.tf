@@ -1,8 +1,18 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~>3.0"
+    }
+  
+  required_version = ">= 1.2.0"
+}
+
 provider "azurerm" {
   features {}
 }
 
-resource "cst8919resourcegroup" {
-  name     = "test"
-  location = "East USfsfaf"
+resource "azurerm_resource_group" "myrg" {
+  name     = "my-test-resource-group"
+  location = "eastus"
 }
